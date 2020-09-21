@@ -2,9 +2,9 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import entitites.Product;
-import util.ProductPredicate;
 
 public class Program {
 
@@ -27,7 +27,11 @@ public class Program {
 		//list.removeIf(Product::staticProductPredicate);
 		
 		//opcao 4 - método não estático
-		list.removeIf(Product::nonStaticProductPredicate);
+		//list.removeIf(Product::nonStaticProductPredicate);
+		
+		// opção 5 - Expressão lambda declarada
+		Predicate<Product> pred = p -> p.getPrice() >= 100.00;
+		list.removeIf(pred);
 		
 		for (Product p: list) {
 			System.out.println(p);
