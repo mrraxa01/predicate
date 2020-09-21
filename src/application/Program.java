@@ -17,21 +17,24 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		//opção 1 
-		//list.removeIf(p -> p.getPrice()>=100);
 		
-		//opção 2 - classe implementando predicate 
+		//opção 1 - classe implementando predicate 
 		//list.removeIf(new ProductPredicate());
 		
-		//opção 3 - metódo estático na classe
+		//opção 2 - metódo estático na classe
 		//list.removeIf(Product::staticProductPredicate);
 		
-		//opcao 4 - método não estático
+		//opcao 3 - método não estático
 		//list.removeIf(Product::nonStaticProductPredicate);
 		
-		// opção 5 - Expressão lambda declarada
+		// opção 4 - Expressão lambda declarada
 		Predicate<Product> pred = p -> p.getPrice() >= 100.00;
 		list.removeIf(pred);
+		
+		//opção 5 -  Expressão lambda inline 
+		list.removeIf(p -> p.getPrice()>=100);
+				
+		
 		
 		for (Product p: list) {
 			System.out.println(p);
