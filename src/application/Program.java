@@ -24,7 +24,10 @@ public class Program {
 		//list.removeIf(new ProductPredicate());
 		
 		//opção 3 - metódo estático na classe
-		list.removeIf(Product::staticProductPredicate);
+		//list.removeIf(Product::staticProductPredicate);
+		
+		//opcao 4 - método não estático
+		list.removeIf(Product::nonStaticProductPredicate);
 		
 		for (Product p: list) {
 			System.out.println(p);
