@@ -20,8 +20,11 @@ public class Program {
 		//opção 1 
 		//list.removeIf(p -> p.getPrice()>=100);
 		
-		//opção 2 - classe implementando predicate
-		list.removeIf(new ProductPredicate());
+		//opção 2 - classe implementando predicate 
+		//list.removeIf(new ProductPredicate());
+		
+		//opção 3 - metódo estático na classe
+		list.removeIf(Product::staticProductPredicate);
 		
 		for (Product p: list) {
 			System.out.println(p);
